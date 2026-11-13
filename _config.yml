@@ -1,0 +1,46 @@
+title: G44
+tagline: every headache, decoded
+description: >-
+  G44 is the medical code family for headache syndromes. G44.com explains every one in plain English,
+  with a free headache type finder, diary, pressure-change outlook and care matching.
+# Canonical home. Pages use a computed <base href>, so the same build also works
+# at https://webworksa1.github.io/g44-com/ before the domain is attached.
+url: "https://g44.com"
+baseurl: ""
+lang: en
+adsense_client: "ca-pub-6620975821265271"
+owner_contact: "https://web.works/contact"
+operator: "Webworks"
+reviewed: "November 2026"
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+plugins:
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - PROMPTS.md
+  - RESEARCH.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      ads: true
+  - scope:
+      path: "types"
+    values:
+      layout: type
+  - scope:
+      path: "guides"
+    values:
+      layout: guide
+  - scope:
+      path: "tools"
+    values:
+      layout: tool

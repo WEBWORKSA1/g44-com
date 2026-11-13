@@ -1,0 +1,30 @@
+<a class="skip" href="{{ page.url | remove_first: '/' }}#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="./" aria-label="G44 home"><span class="brand-mark">G44</span><span class="brand-sub">headache hub</span></a>
+    <button class="icon-btn nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      {%- assign u = page.url %}
+      <a href="types/"{% if u contains '/types/' %} aria-current="page"{% endif %}>Headache types</a>
+      <a href="tools/"{% if u contains '/tools/' %} aria-current="page"{% endif %}>Tools</a>
+      <a href="codes.html"{% if u == '/codes.html' %} aria-current="page"{% endif %}>G44 codes</a>
+      <a href="research.html"{% if u == '/research.html' %} aria-current="page"{% endif %}>Research</a>
+      <a href="videos.html"{% if u == '/videos.html' %} aria-current="page"{% endif %}>Videos</a>
+      <details class="more">
+        <summary>More</summary>
+        <div class="more-panel">
+          <a href="guides/">Guides</a>
+          <a href="support.html">Support G44</a>
+          <a href="contests.html">Contests</a>
+          <a href="careers.html">Careers</a>
+          <a href="partners.html">Advertise and partner</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="search.html">Search</a>
+        </div>
+      </details>
+      <button class="icon-btn" type="button" data-theme-toggle aria-pressed="false" title="Dims the page for light-sensitive eyes"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 1a7 7 0 1 0 9 9A6 6 0 0 1 6 1z" fill="currentColor"/></svg>Low-light</button>
+      <a class="btn btn-primary" href="get-care.html">Get matched with care</a>
+    </nav>
+  </div>
+</header>

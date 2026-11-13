@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{%- assign _segs = page.url | append: "x" | split: "/" -%}
+{%- assign _depth = _segs.size | minus: 2 -%}
+{%- if page.base_js %}
+<script>(function(){var p=location.pathname.split('/');var b=(/\.github\.io$/.test(location.hostname)&&p[1])?'/'+p[1]+'/':'/';document.write('<base href="'+b+'">');})();</script>
+{%- elsif _depth > 0 %}
+<base href="{% for i in (1.._depth) %}../{% endfor %}">
+{%- else %}
+<base href="./">
+{%- endif %}
+{%- if page.url == "/" -%}
+{%- assign _title = site.title | append: ": " | append: site.tagline -%}
+{%- else -%}
+{%- assign _title = page.title | append: " | G44" -%}
+{%- endif %}
+<title>{{ _title }}</title>
+{%- assign _desc = page.description | default: site.description | strip_html | strip_newlines %}
+<meta name="description" content="{{ _desc | escape }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="G44">
+<meta property="og:title" content="{{ _title | escape }}">
+<meta property="og:description" content="{{ _desc | escape }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1F2A44">
+<meta name="google-adsense-account" content="{{ site.adsense_client }}">
+{%- if page.noindex %}
+<meta name="robots" content="noindex">
+{%- endif %}
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:wght@400;600&family=Atkinson+Hyperlegible+Next:ital,wght@0,400;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+<script>try{var t=localStorage.getItem('g44-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+{%- unless page.ads == false %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6620975821265271" crossorigin="anonymous"></script>
+{%- endunless %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"G44","url":"{{ site.url }}/","potentialAction":{"@type":"SearchAction","target":"{{ site.url }}/search.html?q={query}","query-input":"required name=q"}}</script>

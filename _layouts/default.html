@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+<head>
+{% include head.html %}
+</head>
+<body>
+{% include topbar.html %}
+{% include header.html %}
+<main id="main" tabindex="-1">
+{{ content }}
+</main>
+{% include footer.html %}
+<div class="cookie" id="cookie" hidden>
+  <p>We use cookies to show ads and to remember your settings. <a href="privacy.html">Privacy policy</a></p>
+  <button class="btn btn-primary btn-sm" type="button" data-cookie-ok>OK</button>
+</div>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/site.js" defer></script>
+{%- for s in page.scripts %}
+<script src="assets/js/{{ s }}" defer></script>
+{%- endfor %}
+</body>
+</html>

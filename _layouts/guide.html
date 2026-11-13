@@ -1,0 +1,40 @@
+---
+layout: default
+---
+<article>
+  <header class="article-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / <a href="guides/">Guides</a> / {{ page.title }}</nav>
+      <h1>{{ page.title }}</h1>
+      <p class="lede">{{ page.description }}</p>
+    </div>
+  </header>
+  <div class="wrap article-grid">
+    <div class="prose">
+      {{ content }}
+      {% include ad.html slot="in-content" %}
+      {% include redflag.html %}
+      {%- if page.sources %}
+      <section class="sources" aria-labelledby="src-h">
+        <h2 id="src-h" class="h4">Sources</h2>
+        <ol>{% for s in page.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}</ol>
+      </section>
+      {%- endif %}
+      <p class="reviewed">Reviewed {{ site.reviewed }}. Educational information only, not medical advice. Read our <a href="editorial-policy.html">editorial policy</a>.</p>
+    </div>
+    <aside class="side" aria-label="Related">
+      <div class="panel">
+        <h2 class="h4">Start with where it hurts</h2>
+        <p>Our type finder matches your pattern to the headaches that fit it best.</p>
+        <a class="btn btn-primary" href="tools/type-finder.html">Find my headache type</a>
+      </div>
+      {% include ad.html slot="sidebar" %}
+      <div class="panel">
+        <h2 class="h4">More guides</h2>
+        <ul class="plain">{% for g in site.data.guides %}{% assign gu = "/" | append: g.url %}{% unless gu == page.url %}<li><a href="{{ g.url }}">{{ g.title }}</a></li>{% endunless %}{% endfor %}</ul>
+      </div>
+    </aside>
+  </div>
+</article>
+{% include lead-cta.html %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"url":"{{ site.url }}{{ page.url }}","publisher":{"@type":"Organization","name":"G44"}}</script>

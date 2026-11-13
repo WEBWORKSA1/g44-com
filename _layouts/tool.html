@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<section class="tool-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / <a href="tools/">Tools</a> / {{ page.title }}</nav>
+    <h1>{{ page.title }}</h1>
+    <p class="lede">{{ page.description }}</p>
+  </div>
+</section>
+<div class="wrap tool-body">
+{{ content }}
+</div>
+{% include ad.html slot="in-content" %}
+<section class="section">
+  <div class="wrap">
+    <h2 class="h3">More free tools</h2>
+    <div class="toollist">
+      {%- for t in site.data.tools %}{% assign tu = "/" | append: t.url %}{% unless tu == page.url %}{% include tool-item.html t=t %}{% endunless %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% include lead-cta.html %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"url":"{{ site.url }}{{ page.url }}","applicationCategory":"HealthApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>

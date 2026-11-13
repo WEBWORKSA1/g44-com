@@ -1,0 +1,59 @@
+---
+layout: default
+---
+<article>
+  <header class="article-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / <a href="types/">Headache types</a> / {{ page.title }}</nav>
+      <p class="code-chip">{{ page.code }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="lede">{{ page.description }}</p>
+      {%- if page.glance %}
+      <dl class="glance">
+        <div><dt>Where it hurts</dt><dd>{{ page.glance.where }}</dd></div>
+        <div><dt>How long</dt><dd>{{ page.glance.length }}</dd></div>
+        <div><dt>How often</dt><dd>{{ page.glance.often }}</dd></div>
+        <div><dt>Who gets it</dt><dd>{{ page.glance.who }}</dd></div>
+      </dl>
+      {%- endif %}
+    </div>
+  </header>
+  <div class="wrap article-grid">
+    <div class="prose">
+      {{ content }}
+      {% include ad.html slot="in-content" %}
+      {% include redflag.html %}
+      {%- if page.sources %}
+      <section class="sources" aria-labelledby="src-h">
+        <h2 id="src-h" class="h4">Sources</h2>
+        <ol>{% for s in page.sources %}<li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.title }}</a></li>{% endfor %}</ol>
+      </section>
+      {%- endif %}
+      <p class="reviewed">Reviewed {{ site.reviewed }} against the ICHD-3 classification and the sources above. Educational information only, not a diagnosis. Read our <a href="editorial-policy.html">editorial policy</a>.</p>
+    </div>
+    <aside class="side" aria-label="Related tools and types">
+      <div class="panel">
+        <h2 class="h4">Not sure this is yours?</h2>
+        <p>Answer eight quick questions and see which headache types match your pattern.</p>
+        <a class="btn btn-primary" href="tools/type-finder.html">Find my headache type</a>
+      </div>
+      {% include ad.html slot="sidebar" %}
+      <div class="panel">
+        <h2 class="h4">Track it</h2>
+        <ul class="plain">
+          <li><a href="tools/headache-diary.html">Headache diary</a></li>
+          <li><a href="tools/rebound-risk.html">Rebound-risk check</a></li>
+          <li><a href="tools/headache-weather.html">Headache weather</a></li>
+        </ul>
+      </div>
+      {%- if page.related %}
+      <div class="panel">
+        <h2 class="h4">Often confused with</h2>
+        <ul class="plain">{% for r in page.related %}{% assign rt = site.data.types | where: "slug", r | first %}{% if rt %}<li><a href="types/{{ rt.slug }}.html">{{ rt.name }}</a></li>{% endif %}{% endfor %}</ul>
+      </div>
+      {%- endif %}
+    </aside>
+  </div>
+</article>
+{% include lead-cta.html %}
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MedicalWebPage","name":{{ page.title | jsonify }},"description":{{ page.description | jsonify }},"url":"{{ site.url }}{{ page.url }}","lastReviewed":"2026-11-13","about":{"@type":"MedicalCondition","name":{{ page.title | jsonify }}{% if page.icd %},"code":{"@type":"MedicalCode","codeValue":{{ page.icd | jsonify }},"codingSystem":"ICD-10"}{% endif %}}}</script>
