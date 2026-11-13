@@ -1,0 +1,90 @@
+---
+title: Monthly contest
+description: Share what helps you live with headaches and win a gift card. Free to enter, new theme every month, judged on usefulness and originality.
+scripts: [pages.js]
+---
+<section class="hero" data-contest>
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Contest for <span data-c-month>this month</span></p>
+      <h1 data-c-title>Share what helps</h1>
+      <p class="lede" data-c-brief>Tell us the one thing that makes headache days easier for you.</p>
+      <div class="statrow" style="grid-template-columns:repeat(3,minmax(0,1fr))">
+        <div class="stat"><b data-c-prize>A gift card</b><span>Winner</span></div>
+        <div class="stat"><b data-c-runner>Gift cards</b><span>Runners-up</span></div>
+        <div class="stat"><b class="countdown" data-c-clock>Open</b><span>Closes <span data-c-end>at month end</span></span></div>
+      </div>
+      <p class="fine" data-c-sponsor></p>
+      <h2 class="h3">How it works</h2>
+      <ol>
+        <li>Read this month's theme above.</li>
+        <li>Send one entry with the form. Free, one entry per person per month.</li>
+        <li>Our editors score every entry: usefulness 40%, originality 40%, clarity 20%.</li>
+        <li>Winners are announced here and emailed within 14 days after the month closes.</li>
+      </ol>
+      <p>Read the <a href="contests.html#rules">official rules</a> before you enter.</p>
+    </div>
+    <form class="form-card" id="entry" data-form data-subject="Contest entry" data-redirect="thank-you.html?f=entry">
+      <h2 class="h3">Enter now, free</h2>
+      <input type="hidden" name="theme" value="">
+      <div class="row2">
+        <div class="field"><label for="e-name">Name</label><input id="e-name" name="entrant_name" required autocomplete="name"></div>
+        <div class="field"><label for="e-email">Email</label><input id="e-email" type="email" name="email" required autocomplete="email"></div>
+      </div>
+      <div class="field"><label for="e-country">Country and region</label><input id="e-country" name="country" required autocomplete="country-name"></div>
+      <div class="field"><label for="e-title">Entry title</label><input id="e-title" name="entry_title" required maxlength="120"></div>
+      <div class="field"><label for="e-text">Your entry</label><textarea id="e-text" name="entry" rows="7" required maxlength="3000" placeholder="Up to about 500 words"></textarea></div>
+      <div class="field"><label for="e-link">Link to a drawing or photo (optional)</label><input id="e-link" type="url" name="link" placeholder="https://"></div>
+      <label class="check"><input type="checkbox" name="age_confirmed" value="Yes" required> <span>I am 18 or older, or the age of majority where I live.</span></label>
+      <label class="check"><input type="checkbox" name="rules_accepted" value="Yes" required> <span>I have read and accept the official rules, and this entry is my own original work.</span></label>
+      <label class="check"><input type="checkbox" name="publish_ok" value="Yes" required> <span>G44 may publish my entry with my first name and country.</span></label>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary btn-lg" type="submit">Submit my entry</button>
+    </form>
+  </div>
+</section>
+<script type="application/json" id="contest-data">{{ site.data.contests | jsonify }}</script>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="rules" id="rules">
+      <h2>Official rules</h2>
+      <h3>1. Sponsor</h3>
+      <p>The contest is run by G44.com, operated by {{ site.operator }} ("Sponsor"). Questions go through our <a href="contact.html">contact page</a>.</p>
+      <h3>2. No purchase necessary</h3>
+      <p>No purchase, donation or payment of any kind is needed to enter or win. Supporting G44 does not improve your chances.</p>
+      <h3>3. Who can enter</h3>
+      <p>Individuals who are 18 or older, or the age of majority where they live if higher. Void where prohibited or restricted by law. Residents of Quebec, Canada are not eligible. Employees and contractors of the Sponsor and their immediate families may not enter.</p>
+      <h3>4. Entry period</h3>
+      <p>Each contest opens at 00:00 on the first day of the calendar month and closes at 23:59 Eastern Time on the last day of that month.</p>
+      <h3>5. How to enter</h3>
+      <p>Complete the entry form on this page. One entry per person per month. Entries must be your own original work, in English, and on the month's theme. Entries must not make medical claims, promote products or services, or include health details about anyone other than you. Entries that break these rules are disqualified.</p>
+      <h3>6. Judging</h3>
+      <p>A panel of G44 editors scores eligible entries on usefulness to other readers (40%), originality (40%) and clarity (20%). Ties are broken by the usefulness score. The judges' decisions are final.</p>
+      <h3>7. Prizes</h3>
+      <p>One winner receives the first prize and two runners-up each receive the runner-up prize shown on this page. Prizes are delivered as digital gift cards within 30 days of confirmation. Prizes are not transferable. The Sponsor may substitute a prize of equal or greater value.</p>
+      <h3>8. Skill-testing question</h3>
+      <p>Winners resident in Canada must correctly answer a time-limited mathematical skill-testing question before receiving a prize.</p>
+      <h3>9. Winner notification</h3>
+      <p>Winners are emailed within 14 days after the contest closes and must reply within 7 days, or an alternate winner may be chosen. Winners are announced on this page by first name and country.</p>
+      <h3>10. Rights in your entry</h3>
+      <p>You keep the copyright in your entry. By entering, you give G44 a non-exclusive, royalty-free, worldwide licence to publish it, in full or in part, on G44.com, in our newsletter and on our social channels, with your first name and country.</p>
+      <h3>11. Privacy</h3>
+      <p>We use entry details only to run the contest and contact winners, as described in our <a href="privacy.html">privacy policy</a>.</p>
+      <h3>12. General</h3>
+      <p>The Sponsor may cancel, suspend or change a contest if fraud, technical failure or anything else outside its control affects its fairness. Winners are responsible for any taxes on prizes. This contest is not sponsored, endorsed or administered by any social media platform.</p>
+    </div>
+    <div class="side">
+      <div class="panel">
+        <h2 class="h3">Sponsor a prize</h2>
+        <p>Put your brand in front of an engaged headache community, with a clearly labelled thank-you on this page and in our weekly note.</p>
+        <a class="btn btn-primary" href="partners.html">Sponsor a contest</a>
+      </div>
+      <div class="panel">
+        <h2 class="h3">Grow the prize pool</h2>
+        <p>Ten percent of reader support goes to contest prizes.</p>
+        <a class="btn btn-quiet" href="support.html">Support G44</a>
+      </div>
+    </div>
+  </div>
+</section>

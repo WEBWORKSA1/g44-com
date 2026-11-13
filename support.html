@@ -1,0 +1,78 @@
+---
+title: Support G44
+description: Help keep G44 free and independent. Reader support pays for medical review, new tools, promotion, hiring and contest prizes.
+scripts: [pages.js]
+---
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <h1>Keep G44 free for everyone with a headache</h1>
+      <p class="lede">G44 is free to use and always will be. Ads cover part of the bill. Reader support covers the rest and keeps us independent of any drug or device company.</p>
+      <h2 class="h3 mt2">Where your support goes</h2>
+      <div class="alloc">
+        <div class="alloc-row"><span>Running costs, hosting and data feeds</span><div class="meter"><i style="width:30%"></i></div><b>30%</b></div>
+        <div class="alloc-row"><span>Medical review and new guides</span><div class="meter"><i style="width:25%"></i></div><b>25%</b></div>
+        <div class="alloc-row"><span>Hiring writers, reviewers and developers</span><div class="meter"><i style="width:20%"></i></div><b>20%</b></div>
+        <div class="alloc-row"><span>Promotion and outreach</span><div class="meter"><i style="width:15%"></i></div><b>15%</b></div>
+        <div class="alloc-row"><span>Contest prizes</span><div class="meter"><i style="width:10%"></i></div><b>10%</b></div>
+      </div>
+      <p class="fine">This is our target budget split, reviewed every quarter. G44.com is not a registered charity, so support is not tax-deductible.</p>
+    </div>
+    <div class="form-card" data-support>
+      <h2 class="h3">Choose an amount (US$)</h2>
+      <div class="seg" role="group" aria-label="How often">
+        <button type="button" data-freq="once" aria-pressed="true">One time</button>
+        <button type="button" data-freq="monthly" aria-pressed="false">Monthly</button>
+      </div>
+      <div class="tiers mt1">
+        <button class="tier" type="button" data-amount="5" aria-pressed="false"><b>$5</b><small>A day of hosting and live data</small></button>
+        <button class="tier" type="button" data-amount="15" aria-pressed="true"><b>$15</b><small>A plain-English summary of a new study</small></button>
+        <button class="tier" type="button" data-amount="50" aria-pressed="false"><b>$50</b><small>A runner-up prize in a contest</small></button>
+        <button class="tier" type="button" data-amount="150" aria-pressed="false"><b>$150</b><small>A medical review of one guide</small></button>
+        <button class="tier" type="button" data-amount="500" aria-pressed="false"><b>$500</b><small>Sponsors a new free tool</small></button>
+      </div>
+      <div data-paylinks class="mt1"></div>
+      <h3 class="h4 mt2">Other ways to help</h3>
+      <ul class="plain">
+        <li>Share G44 with someone who gets headaches.</li>
+        <li><a href="contests.html">Enter or sponsor a contest</a></li>
+        <li><a href="careers.html">Volunteer your skills</a></li>
+        <li><a href="partners.html">Sponsor a tool or guide</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2>Pledge your support</h2>
+      <p>Pledge here and we will email you a secure payment link within two business days. You can also pledge prizes, professional services or equipment.</p>
+      <h3 class="h4">What supporters get</h3>
+      <ul>
+        <li>A thank-you by first name on our supporters list, if you want one</li>
+        <li>A quarterly note on what your support paid for</li>
+        <li>Early access to new tools</li>
+      </ul>
+    </div>
+    <form class="form-card" id="pledge" data-form data-subject="Support pledge" data-redirect="thank-you.html?f=pledge">
+      <div class="row2">
+        <div class="field"><label for="p-name">Name</label><input id="p-name" name="supporter_name" required autocomplete="name"></div>
+        <div class="field"><label for="p-email">Email</label><input id="p-email" type="email" name="email" required autocomplete="email"></div>
+      </div>
+      <div class="row2">
+        <div class="field"><label for="p-amount">Amount (US$)</label><input id="p-amount" type="number" name="amount" min="1" step="1" value="15" required></div>
+        <div class="field"><label for="p-freq">How often</label><select id="p-freq" name="frequency"><option>One time</option><option>Monthly</option><option>Yearly</option></select></div>
+      </div>
+      <div class="field">
+        <label for="p-type">Type of support</label>
+        <select id="p-type" name="support_type"><option>Money</option><option>Contest prize</option><option>Professional services or skills</option><option>Equipment</option><option>Other</option></select>
+      </div>
+      <div class="field"><label for="p-msg">Message (optional)</label><textarea id="p-msg" name="message" rows="3"></textarea></div>
+      <label class="check"><input type="checkbox" name="public_thanks" value="Yes"> <span>You may thank me by first name on the supporters list.</span></label>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary btn-lg" type="submit">Send my pledge</button>
+      <p class="fine mt1">We never store card details. Payments are handled by the payment provider you choose. See our <a href="privacy.html">privacy policy</a>.</p>
+    </form>
+  </div>
+</section>
