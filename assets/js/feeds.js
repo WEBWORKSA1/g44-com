@@ -27,10 +27,11 @@
   }
 
   function trials(cond, max) {
-    var key = 'ct:' + cond + ':' + max, c = cacheGet(key);
+    var key = 'ct2:' + cond + ':' + max, c = cacheGet(key);
     if (c) return Promise.resolve(c);
     var u = 'https://clinicaltrials.gov/api/v2/studies?format=json&countTotal=true&pageSize=' + max +
-      '&filter.overallStatus=RECRUITING&fields=NCTId,BriefTitle,LocationCountry,Phase&query.cond=' + encodeURIComponent(cond);
+      '&filter.overallStatus=RECRUITING&fields=NCTId,BriefTitle,LocationCountry,Phase&query.cond=' + encodeURIComponent(cond) +
+      '&query.titles=' + encodeURIComponent(cond);
     return getJSON(u).then(function (j) {
       var list = (j.studies || []).map(function (s) {
         var p = s.protocolSection || {}, idm = p.identificationModule || {};
