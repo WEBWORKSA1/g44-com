@@ -1,0 +1,31 @@
+---
+layout: default
+title: Headache types
+description: Every headache in the G44 family, plus migraine, sinus and caffeine headaches, explained in plain English with what helps and when to get help.
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Headache types</nav>
+    <h1>Headache types</h1>
+    <p class="lede">Doctors split headaches into two groups. Primary headaches, such as tension-type and cluster, are conditions in their own right. Secondary headaches are caused by something else, such as an injury, an infection or medicines. The G44 code family covers both kinds, except migraine, which has its own code.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="tools/type-finder.html">Find my headache type</a>
+      <a class="btn btn-quiet" href="codes.html">Browse the G44 codes</a>
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <h2 class="h3">In the G44 family</h2>
+    <div class="ledger">
+      {%- for t in site.data.types %}{% if t.group == "g44" %}{% include type-row.html t=t %}{% endif %}{% endfor %}
+    </div>
+    <h2 class="h3 mt2">Neighbours they get confused with</h2>
+    <div class="ledger">
+      {%- for t in site.data.types %}{% if t.group == "neighbour" %}{% include type-row.html t=t %}{% endif %}{% endfor %}
+    </div>
+    {% include redflag.html %}
+  </div>
+</section>
+{% include ad.html slot="in-content" %}
+{% include lead-cta.html %}
