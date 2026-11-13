@@ -1,0 +1,23 @@
+---
+layout: default
+title: Headache guides
+description: Practical, plain-English guides for living with headaches, from first aid in the first 30 minutes to getting the most from a doctor's appointment.
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Guides</nav>
+    <h1>Guides</h1>
+    <p class="lede">Practical help for the parts of headache life that the condition pages do not cover.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="ledger">
+      {%- for g in site.data.guides %}
+      <a class="ledger-row" href="{{ g.url }}"><span class="ledger-code">Guide</span><span class="ledger-name">{{ g.title }}</span><span class="ledger-desc">{{ g.blurb }}</span><span class="ledger-go">Read</span></a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{% include ad.html slot="in-content" %}
+{% include lead-cta.html %}
