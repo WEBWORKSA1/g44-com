@@ -1,0 +1,100 @@
+# The headache library. group: g44 = inside ICD-10 category G44; neighbour = commonly confused relatives.
+# cond = ClinicalTrials.gov condition term; term = PubMed search term.
+- slug: tension-type
+  name: Tension-type headache
+  code: G44.2
+  group: g44
+  short: A pressing band on both sides. The most common headache in the world.
+  cond: tension-type headache
+  term: '"tension-type headache"[tiab]'
+- slug: cluster
+  name: Cluster headache
+  code: G44.0
+  group: g44
+  short: Severe pain around one eye, in daily bouts that can last for weeks.
+  cond: cluster headache
+  term: '"cluster headache"[tiab]'
+- slug: other-tacs
+  name: Paroxysmal hemicrania, SUNCT and hemicrania continua
+  code: G44.03-G44.09
+  group: g44
+  short: Rare one-sided headaches with eye and nose symptoms. Some respond to one specific medicine.
+  cond: trigeminal autonomic cephalalgia
+  term: '("paroxysmal hemicrania"[tiab] OR SUNCT[tiab] OR "hemicrania continua"[tiab])'
+- slug: medication-overuse
+  name: Medication-overuse headache
+  code: G44.4
+  group: g44
+  short: Near-daily headache driven by taking pain relief too often. Also called rebound headache.
+  cond: medication overuse headache
+  term: '"medication overuse headache"[tiab]'
+- slug: post-traumatic
+  name: Post-traumatic headache
+  code: G44.3
+  group: g44
+  short: Headache that starts within a week of a head or neck injury, including concussion.
+  cond: post-traumatic headache
+  term: '"post-traumatic headache"[tiab]'
+- slug: thunderclap
+  name: Thunderclap headache
+  code: G44.53
+  group: g44
+  short: Sudden, severe pain that peaks within a minute. Always treat it as an emergency.
+  cond: thunderclap headache
+  term: '"thunderclap headache"[tiab]'
+- slug: new-daily-persistent
+  name: New daily persistent headache
+  code: G44.52
+  group: g44
+  short: Starts on a day you can name and never lets up.
+  cond: new daily persistent headache
+  term: '"new daily persistent headache"[tiab]'
+- slug: hypnic
+  name: Hypnic headache
+  code: G44.81
+  group: g44
+  short: The alarm-clock headache that wakes older adults at the same time each night.
+  cond: hypnic headache
+  term: '"hypnic headache"[tiab]'
+- slug: cervicogenic
+  name: Cervicogenic headache
+  code: G44.86
+  group: g44
+  short: Head pain that starts in the neck and gets worse with neck movement.
+  cond: cervicogenic headache
+  term: '"cervicogenic headache"[tiab]'
+- slug: primary-stabbing
+  name: Primary stabbing headache
+  code: G44.85
+  group: g44
+  short: Ice-pick jabs that last a few seconds and come out of nowhere.
+  cond: headache
+  term: '("primary stabbing headache"[tiab] OR "ice pick headache"[tiab])'
+- slug: exertional-and-cough
+  name: Cough, exertional and sexual-activity headache
+  code: G44.82-G44.84
+  group: g44
+  short: Brought on by coughing, straining, hard exercise or sex. The first one always needs checking.
+  cond: headache
+  term: '("primary cough headache"[tiab] OR "exertional headache"[tiab])'
+- slug: migraine
+  name: Migraine
+  code: G43
+  group: neighbour
+  short: Throbbing attacks with nausea and light sensitivity that last hours to days.
+  cond: migraine
+  term: 'migraine[ti]'
+- slug: sinus
+  name: Sinus headache
+  code: J01 / J32
+  group: neighbour
+  short: Face pain with a blocked nose and fever. Most self-diagnosed sinus headaches turn out to be migraine.
+  cond: sinusitis
+  term: '(rhinosinusitis[tiab] AND headache[tiab])'
+- slug: caffeine-withdrawal
+  name: Caffeine-withdrawal headache
+  code: ICHD-3 8.3.1
+  group: neighbour
+  short: The headache that arrives when your usual coffee does not.
+  cond: headache
+  term: '(caffeine[tiab] AND withdrawal[tiab] AND headache[tiab])'

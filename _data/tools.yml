@@ -1,0 +1,40 @@
+- name: Headache type finder
+  url: tools/type-finder.html
+  glyph: TF
+  blurb: Ten quick questions, matched against the international classification.
+- name: Warning-sign checker
+  url: tools/red-flags.html
+  glyph: RF
+  blurb: Know in a minute whether to call for help, see a doctor today or book in.
+- name: Headache diary
+  url: tools/headache-diary.html
+  glyph: DY
+  blurb: Log attacks, triggers and pills. Calendar, monthly stats and a doctor-ready export.
+- name: Headache weather
+  url: tools/headache-weather.html
+  glyph: hPa
+  blurb: A 72-hour air-pressure change outlook for your town.
+- name: Rebound-risk check
+  url: tools/rebound-risk.html
+  glyph: MO
+  blurb: See whether your pain-relief days are near the medication-overuse line.
+- name: Caffeine counter
+  url: tools/caffeine-counter.html
+  glyph: mg
+  blurb: Add up today's caffeine and see where the headache thresholds sit.
+- name: Desk-break timer
+  url: tools/desk-break.html
+  glyph: "20"
+  blurb: Eye breaks and a guided neck routine for long screen days.
+- name: Breathing pacer
+  url: tools/breathing.html
+  glyph: Br
+  blurb: Slow, guided breathing to ease muscle tension and stress.
+- name: Doctor visit planner
+  url: tools/visit-prep.html
+  glyph: Dr
+  blurb: Build a one-page summary and question list for your appointment.
+- name: G44 code explorer
+  url: codes.html
+  glyph: G44
+  blurb: Every G44 code in plain English, searchable.

@@ -1,0 +1,62 @@
+# ICD-10-CM category G44 (U.S. clinical modification). Plain-English notes are ours.
+# "Intractable" in ICD-10-CM means hard to treat: pharmacoresistant, refractory or poorly controlled.
+- cat: G44.0 Cluster headaches and other trigeminal autonomic cephalgias (TAC)
+  codes:
+    - {code: G44.001, title: "Cluster headache syndrome, unspecified, intractable", plain: "Cluster headache, type not stated, hard to treat.", slug: cluster}
+    - {code: G44.009, title: "Cluster headache syndrome, unspecified, not intractable", plain: "Cluster headache, type not stated, responding to treatment.", slug: cluster}
+    - {code: G44.011, title: "Episodic cluster headache, intractable", plain: "Cluster bouts with pain-free gaps of 3 months or more, hard to treat.", slug: cluster}
+    - {code: G44.019, title: "Episodic cluster headache, not intractable", plain: "Cluster bouts with pain-free gaps of 3 months or more.", slug: cluster}
+    - {code: G44.021, title: "Chronic cluster headache, intractable", plain: "Cluster attacks for a year or more with short or no breaks, hard to treat.", slug: cluster}
+    - {code: G44.029, title: "Chronic cluster headache, not intractable", plain: "Cluster attacks for a year or more with short or no breaks.", slug: cluster}
+    - {code: G44.031, title: "Episodic paroxysmal hemicrania, intractable", plain: "Short, frequent one-sided attacks in bouts, hard to treat.", slug: other-tacs}
+    - {code: G44.039, title: "Episodic paroxysmal hemicrania, not intractable", plain: "Short, frequent one-sided attacks in bouts.", slug: other-tacs}
+    - {code: G44.041, title: "Chronic paroxysmal hemicrania, intractable", plain: "Short, frequent one-sided attacks without long breaks, hard to treat.", slug: other-tacs}
+    - {code: G44.049, title: "Chronic paroxysmal hemicrania, not intractable", plain: "Short, frequent one-sided attacks without long breaks.", slug: other-tacs}
+    - {code: G44.051, title: "Short lasting unilateral neuralgiform headache with conjunctival injection and tearing (SUNCT), intractable", plain: "Seconds-long stabbing attacks around one eye with a red, watery eye, hard to treat.", slug: other-tacs}
+    - {code: G44.059, title: "Short lasting unilateral neuralgiform headache with conjunctival injection and tearing (SUNCT), not intractable", plain: "Seconds-long stabbing attacks around one eye with a red, watery eye.", slug: other-tacs}
+    - {code: G44.091, title: "Other trigeminal autonomic cephalgias (TAC), intractable", plain: "Another headache in the cluster family, hard to treat.", slug: other-tacs}
+    - {code: G44.099, title: "Other trigeminal autonomic cephalgias (TAC), not intractable", plain: "Another headache in the cluster family.", slug: other-tacs}
+- cat: G44.1 Vascular headache
+  codes:
+    - {code: G44.1, title: "Vascular headache, not elsewhere classified", plain: "An older umbrella term for blood-vessel-related headache that fits no other code.", slug: ""}
+- cat: G44.2 Tension-type headache
+  codes:
+    - {code: G44.201, title: "Tension-type headache, unspecified, intractable", plain: "Tension-type headache, frequency not stated, hard to treat.", slug: tension-type}
+    - {code: G44.209, title: "Tension-type headache, unspecified, not intractable", plain: "Tension-type headache, frequency not stated. One of the most used headache codes.", slug: tension-type}
+    - {code: G44.211, title: "Episodic tension-type headache, intractable", plain: "Tension-type headache on fewer than 15 days a month, hard to treat.", slug: tension-type}
+    - {code: G44.219, title: "Episodic tension-type headache, not intractable", plain: "Tension-type headache on fewer than 15 days a month.", slug: tension-type}
+    - {code: G44.221, title: "Chronic tension-type headache, intractable", plain: "Tension-type headache on 15 or more days a month, hard to treat.", slug: tension-type}
+    - {code: G44.229, title: "Chronic tension-type headache, not intractable", plain: "Tension-type headache on 15 or more days a month.", slug: tension-type}
+- cat: G44.3 Post-traumatic headache
+  codes:
+    - {code: G44.301, title: "Post-traumatic headache, unspecified, intractable", plain: "Headache after a head or neck injury, timing not stated, hard to treat.", slug: post-traumatic}
+    - {code: G44.309, title: "Post-traumatic headache, unspecified, not intractable", plain: "Headache after a head or neck injury, timing not stated.", slug: post-traumatic}
+    - {code: G44.311, title: "Acute post-traumatic headache, intractable", plain: "Headache in the first 3 months after injury, hard to treat.", slug: post-traumatic}
+    - {code: G44.319, title: "Acute post-traumatic headache, not intractable", plain: "Headache in the first 3 months after injury.", slug: post-traumatic}
+    - {code: G44.321, title: "Chronic post-traumatic headache, intractable", plain: "Headache lasting beyond 3 months after injury, hard to treat.", slug: post-traumatic}
+    - {code: G44.329, title: "Chronic post-traumatic headache, not intractable", plain: "Headache lasting beyond 3 months after injury.", slug: post-traumatic}
+- cat: G44.4 Drug-induced headache
+  codes:
+    - {code: G44.40, title: "Drug-induced headache, not elsewhere classified, not intractable", plain: "Headache caused by a medicine, including medication-overuse (rebound) headache.", slug: medication-overuse}
+    - {code: G44.41, title: "Drug-induced headache, not elsewhere classified, intractable", plain: "Medicine-caused headache that is hard to treat.", slug: medication-overuse}
+- cat: G44.5 Complicated headache syndromes
+  codes:
+    - {code: G44.51, title: "Hemicrania continua", plain: "A constant one-sided headache with flare-ups and eye or nose symptoms.", slug: other-tacs}
+    - {code: G44.52, title: "New daily persistent headache (NDPH)", plain: "A headache that started on a remembered day and has not stopped.", slug: new-daily-persistent}
+    - {code: G44.53, title: "Primary thunderclap headache", plain: "Sudden severe headache with no cause found after emergency testing.", slug: thunderclap}
+    - {code: G44.59, title: "Other complicated headache syndrome", plain: "A complex headache syndrome that fits no other code here.", slug: ""}
+- cat: G44.8 Other specified headache syndromes
+  codes:
+    - {code: G44.81, title: "Hypnic headache", plain: "Headache that only happens during sleep and wakes you up.", slug: hypnic}
+    - {code: G44.82, title: "Headache associated with sexual activity", plain: "Headache that builds or explodes during sexual activity.", slug: exertional-and-cough}
+    - {code: G44.83, title: "Primary cough headache", plain: "Brief headache set off by coughing, sneezing or straining.", slug: exertional-and-cough}
+    - {code: G44.84, title: "Primary exertional headache", plain: "Headache brought on by hard physical exercise.", slug: exertional-and-cough}
+    - {code: G44.85, title: "Primary stabbing headache", plain: "Ice-pick jabs lasting seconds.", slug: primary-stabbing}
+    - {code: G44.86, title: "Cervicogenic headache", plain: "Headache caused by a problem in the neck.", slug: cervicogenic}
+    - {code: G44.89, title: "Other headache syndrome", plain: "A specific headache syndrome with no code of its own.", slug: ""}
+- cat: Neighbours outside G44
+  codes:
+    - {code: G43, title: "Migraine", plain: "Migraine has its own category. G44 excludes it.", slug: migraine}
+    - {code: R51.9, title: "Headache, unspecified", plain: "A headache with no specific diagnosis yet.", slug: ""}
+    - {code: G50.0, title: "Trigeminal neuralgia", plain: "Electric-shock face pain from the trigeminal nerve. Excluded from G44.", slug: ""}
+    - {code: G97.1, title: "Other reaction to spinal and lumbar puncture", plain: "Includes headache after a lumbar puncture. Excluded from G44.", slug: ""}
