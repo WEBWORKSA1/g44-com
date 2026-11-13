@@ -8,7 +8,7 @@
   if (sup) {
     var amount = 15, freq = 'once';
     var payBox = $('[data-paylinks]', sup), pledge = $('#pledge');
-    function sync() {
+    var sync = function () {
       $$('.tier', sup).forEach(function (b) { b.setAttribute('aria-pressed', +b.getAttribute('data-amount') === amount ? 'true' : 'false'); });
       $$('[data-freq]', sup).forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-freq') === freq ? 'true' : 'false'); });
       var d = C.donate || {}, links = [];
@@ -18,14 +18,18 @@
       if (d.bmc) links.push('<a class="btn btn-quiet btn-lg" href="' + esc(d.bmc) + '" target="_blank" rel="noopener">Buy us a coffee</a>');
       payBox.innerHTML = links.length ? links.join(' ') + '<p class="fine mt1">You choose the final amount on the payment page.</p>' :
         '<a class="btn btn-primary btn-lg" href="support.html#pledge" data-to-pledge>Pledge US$' + amount + (freq === 'monthly' ? ' a month' : '') + '</a><p class="fine mt1">Card and PayPal checkout is being set up. Pledge now and we will send you a secure payment link.</p>';
-      if (pledge) { pledge.amount.value = amount; pledge.frequency.value = freq === 'monthly' ? 'Monthly' : 'One time'; }
-    }
+      if (pledge) { pledge.elements.amount.value = amount; pledge.elements.frequency.value = freq === 'monthly' ? 'Monthly' : 'One time'; }
+    };
     sup.addEventListener('click', function (e) {
       var t = e.target.closest('.tier');
       if (t) { amount = +t.getAttribute('data-amount'); sync(); }
       var f = e.target.closest('[data-freq]');
       if (f) { freq = f.getAttribute('data-freq'); sync(); }
-      if (e.target.closest('[data-to-pledge]')) { e.preventDefault(); pledge.scrollIntoView({ behavior: 'smooth' }); pledge.name.focus({ preventScroll: true }); }
+      if (e.target.closest('[data-to-pledge]') && pledge) {
+        e.preventDefault();
+        pledge.scrollIntoView({ behavior: 'smooth' });
+        pledge.elements.supporter_name.focus({ preventScroll: true });
+      }
     });
     sync();
   }
@@ -51,7 +55,7 @@
         var ms = end - new Date();
         if (ms < 0) { clock.textContent = 'Closed'; return; }
         var d = Math.floor(ms / 864e5), h = Math.floor(ms / 36e5) % 24, m = Math.floor(ms / 6e4) % 60;
-        clock.textContent = d + ' days ' + h + ' h ' + m + ' min';
+        clock.textContent = d + 'd ' + h + 'h ' + m + 'm';
       };
       tick(); setInterval(tick, 30000);
     } catch (e) {}
@@ -74,7 +78,7 @@
       res.innerHTML = hits.length ? '<ul class="feed">' + hits.map(function (h) { return '<li><a href="' + esc(h.p.url.replace(/^\//, '')) + '">' + esc(h.p.title) + '</a><small>' + esc(h.p.description) + '</small></li>'; }).join('') + '</ul>' :
         '<p class="feed-status">Nothing matched "' + esc(q) + '". Try a symptom such as "eye", "neck" or "morning", or a code such as G44.2.</p>';
     };
-    fetch('search.json').then(function (r) { return r.json(); }).then(function (j) { idx = j; if (G.params.get('q')) { input.value = G.params.get('q'); } if (input.value) run(); });
+    fetch('search.json').then(function (r) { return r.json(); }).then(function (j) { idx = j; if (G.params.get('q')) input.value = G.params.get('q'); if (input.value) run(); });
     input.addEventListener('input', run);
     sb.addEventListener('submit', function (e) { e.preventDefault(); run(); });
   }
@@ -107,5 +111,6 @@
       window.G44Feeds.renderTrials(el);
     };
     sel.addEventListener('change', upd);
+    if (sel.value) upd();
   }
 })();

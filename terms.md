@@ -45,7 +45,7 @@ The site is provided "as is" without warranties of any kind. To the extent the l
 
 ## Governing law
 
-These terms are governed by the laws of the Province of Ontario and the federal laws of Canada that apply there, unless the law where you live gives you rights that cannot be waived.
+These terms are governed by the laws of Canada and of the Canadian province in which the operator is established, unless the law where you live gives you rights that cannot be waived.
 
 ## Contact
 
