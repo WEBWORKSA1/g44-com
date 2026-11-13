@@ -1,0 +1,45 @@
+---
+title: Latest headache research and recruiting studies
+description: The newest research papers on every G44 headache from PubMed, and clinical studies recruiting now from ClinicalTrials.gov. Updated live.
+scripts: [feeds.js]
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Research</nav>
+    <h1>Headache research, live</h1>
+    <p class="lede">The newest papers from PubMed and the studies recruiting right now on ClinicalTrials.gov, updated every time you visit. Choose a headache type.</p>
+    <div class="chips mt1" data-feed-topics data-pubmed-target="#pm" data-trials-target="#ct" role="group" aria-label="Choose a headache type">
+      <button class="chip" type="button" aria-pressed="true" data-term='"headache disorders"[mh] AND hasabstract' data-cond="headache">All headache</button>
+      {%- for t in site.data.types %}
+      <button class="chip" type="button" aria-pressed="false" data-term="{{ t.term | escape }}" data-cond="{{ t.cond | escape }}">{{ t.name }}</button>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap split">
+    <div>
+      <h2 class="h3">Newest papers</h2>
+      <div id="pm" data-pubmed='"headache disorders"[mh] AND hasabstract' data-max="10"></div>
+    </div>
+    <div class="panel">
+      <h2 class="h3">Studies recruiting now</h2>
+      <div id="ct" data-trials="headache" data-max="6"></div>
+      <a class="btn btn-primary mt1" href="get-care.html?need=studies">Help me find a study</a>
+    </div>
+  </div>
+</section>
+{% include ad.html slot="in-content" %}
+<section class="section-tight">
+  <div class="wrap prose">
+    <h2>Reading research wisely</h2>
+    <ul>
+      <li><strong>One study is a data point.</strong> Guidelines weigh many studies together.</li>
+      <li><strong>Check who was studied.</strong> Results in mice, or in a small group, may not apply to you.</li>
+      <li><strong>Look for the type of study.</strong> Randomised controlled trials and systematic reviews carry the most weight.</li>
+      <li><strong>Talk before you change.</strong> Discuss any new finding with your clinician before changing treatment.</li>
+    </ul>
+    <h2>Taking part in a study</h2>
+    <p>Clinical studies test new treatments and better ways to use existing ones. Every approved study is reviewed by an ethics board, explains its risks in writing, and lets you leave at any time. Many cover travel and pay for your time. If you would like help finding one, our <a href="get-care.html?need=studies">matching service</a> is free.</p>
+  </div>
+</section>

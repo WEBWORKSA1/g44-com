@@ -1,0 +1,20 @@
+---
+title: Headache diary
+description: A free, private headache diary. Log attacks, pain, triggers and medicine. See a monthly calendar, stats and rebound-risk warnings, and export a report for your doctor.
+scripts: [tools/diary.js]
+---
+<div id="diary"><noscript>The diary needs JavaScript. A paper diary works too: note the date, time, length, pain from 0 to 10, medicine and possible triggers.</noscript></div>
+<script type="application/json" id="types-data">{{ site.data.types | jsonify }}</script>
+<div class="prose mt2">
+  <h2>Why a diary beats memory</h2>
+  <p>Headache diagnosis rests on patterns, and memory is a poor record of patterns. A diary shows your doctor how often headaches really come, how long they last, what you take and whether it works. Two to three months of entries is usually enough to see triggers, spot medication overuse and judge whether a treatment is working.</p>
+  <h2>What to record</h2>
+  <ul>
+    <li>Date, start time and how long it lasted.</li>
+    <li>Pain from 0 (none) to 10 (worst imaginable).</li>
+    <li>What you took, and whether it helped.</li>
+    <li>Anything that might have set it off. Mark it even if you are not sure: patterns appear over weeks.</li>
+  </ul>
+  <h2>Your privacy</h2>
+  <p>Entries are saved in this browser's local storage on this device only. They are not sent to G44 or anyone else. Clearing your browser data deletes them, so export a CSV now and then if you want a backup.</p>
+</div>

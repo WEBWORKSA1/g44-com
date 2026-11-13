@@ -1,0 +1,25 @@
+---
+layout: default
+title: Free headache tools
+description: A headache type finder, warning-sign checker, diary, pressure-change outlook, rebound-risk check and more. Free, private and no sign-up.
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Tools</nav>
+    <h1>Free headache tools</h1>
+    <p class="lede">Each tool runs in your browser. No account, nothing to install, and your diary and settings stay on your own device.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="toollist">
+      {%- for t in site.data.tools %}{% include tool-item.html t=t %}{% endfor %}
+    </div>
+    <div class="prose mt2">
+      <h2>Where to start</h2>
+      <p>If you are not sure what kind of headache you have, start with the <a href="tools/type-finder.html">type finder</a>. If something about this headache feels different or frightening, use the <a href="tools/red-flags.html">warning-sign checker</a> first. If you get headaches often, the <a href="tools/headache-diary.html">diary</a> is the single most useful thing you can do: two months of entries usually reveal the pattern, the triggers and whether you are near the <a href="tools/rebound-risk.html">medication-overuse line</a>.</p>
+    </div>
+  </div>
+</section>
+{% include ad.html slot="in-content" %}
+{% include lead-cta.html %}

@@ -1,0 +1,46 @@
+---
+title: Headache video library
+description: Short explainers on headache types, causes and relief from educators and clinicians, plus quick links to explore each topic on YouTube.
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / Videos</nav>
+    <h1>Watch and learn</h1>
+    <p class="lede">Explainers from educators and clinicians. Videos load only when you press play, and use YouTube's privacy-enhanced mode.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap">
+    <div class="grid3">
+      {%- for v in site.data.videos.videos %}{% include video.html id=v.id title=v.title channel=v.channel %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% include ad.html slot="in-content" %}
+<section class="section-tight">
+  <div class="wrap">
+    <h2 class="h3">Explore more on YouTube</h2>
+    <p class="muted">These open a YouTube search in a new tab. Look for videos from hospitals, universities and qualified clinicians.</p>
+    <div class="yt-topics">
+      {%- for t in site.data.videos.topics %}
+      <a class="chip" href="https://www.youtube.com/results?search_query={{ t.q | url_encode }}" target="_blank" rel="noopener">{{ t.label }}</a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="wrap split">
+    <div class="prose">
+      <h2>Suggest a video</h2>
+      <p>Found a clear, accurate headache video from a qualified source? Send it in. We check every suggestion before adding it. Video creators can also ask about a featured spot through our <a href="partners.html">partner page</a>.</p>
+      <p class="fine">Videos are the property of their creators. Inclusion is not an endorsement, and videos are not a substitute for medical advice.</p>
+    </div>
+    <form class="form-card" data-form data-subject="Video suggestion" data-ok="Thanks. We will review your suggestion.">
+      <div class="field"><label for="v-link">YouTube link</label><input id="v-link" type="url" name="video_link" required placeholder="https://www.youtube.com/watch?v=..."></div>
+      <div class="field"><label for="v-why">Why it helps</label><textarea id="v-why" name="why" rows="3"></textarea></div>
+      <div class="field"><label for="v-email">Your email (optional)</label><input id="v-email" type="email" name="email" autocomplete="email"></div>
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-primary" type="submit">Send suggestion</button>
+    </form>
+  </div>
+</section>

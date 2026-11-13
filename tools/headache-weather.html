@@ -1,0 +1,20 @@
+---
+title: Headache weather
+description: A free 72-hour air-pressure change outlook for your town. See which days bring the biggest pressure swings that many people with headaches notice.
+scripts: [tools/weather.js]
+---
+<div class="tool-card"><div data-weather="full"></div></div>
+<div class="prose mt2">
+  <h2>How the outlook works</h2>
+  <p>We take the hourly sea-level air pressure forecast for your location from Open-Meteo and look for the largest change over any 24-hour window in each of the next three days. Falling pressure is weighted more than rising pressure, because falls before fronts and storms are the changes people with headaches report most.</p>
+  <table>
+    <tr><th>Level</th><th>Largest 24-hour swing</th></tr>
+    <tr><td><span class="lvl lvl-low">Low</span></td><td>Under 3 hPa</td></tr>
+    <tr><td><span class="lvl lvl-mod">Moderate</span></td><td>3 to 6 hPa</td></tr>
+    <tr><td><span class="lvl lvl-high">High</span></td><td>6 to 10 hPa</td></tr>
+    <tr><td><span class="lvl lvl-high">Very high</span></td><td>10 hPa or more</td></tr>
+  </table>
+  <h2>What the research says</h2>
+  <p>Weather is one of the most commonly reported headache triggers, especially in migraine. Studies are mixed: some people are clearly sensitive to pressure changes, many are not. The way to find out is to log your headaches in the <a href="tools/headache-diary.html">diary</a> with "Weather change" ticked when it applies, and compare over a few months.</p>
+  <p class="fine">This is a weather outlook, not a medical forecast. Weather data by Open-Meteo.com (CC BY 4.0).</p>
+</div>

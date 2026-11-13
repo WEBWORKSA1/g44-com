@@ -1,0 +1,46 @@
+---
+title: G44 code explorer
+description: Every ICD-10-CM code in category G44, other headache syndromes, with a plain-English meaning and a link to the matching guide. Searchable and free.
+keywords: G44.209 G44.229 G44.019 G44.40 G44.52 ICD-10 headache codes billing coding
+scripts: [tools/codes.js]
+---
+<section class="article-head">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="./">Home</a> / G44 code explorer</nav>
+    <h1>The G44 code explorer</h1>
+    <p class="lede">Category G44 of the ICD-10 is "other headache syndromes". Here is every code in it, with what it means in plain English and a link to the guide for that headache.</p>
+  </div>
+</section>
+<section class="section-tight">
+  <div class="wrap" id="codes">
+    <div class="codes-tools">
+      <label class="sr" for="code-q">Search codes</label>
+      <input id="code-q" type="search" placeholder="Search a code or word, for example G44.209 or chronic">
+      <span class="fine" data-count aria-live="polite"></span>
+    </div>
+    <div class="chips" aria-label="Filter by group"></div>
+    <div style="overflow-x:auto">
+      <table class="codes-table mt1">
+        <thead><tr><th scope="col">Code</th><th scope="col">Official title</th><th scope="col">In plain English</th><th scope="col"><span class="sr">Actions</span></th></tr></thead>
+        <tbody><tr><td colspan="4">Loading codes...</td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="codes-data">{{ site.data.codes | jsonify }}</script>
+{% include ad.html slot="in-content" %}
+<section class="section-tight">
+  <div class="wrap prose">
+    <h2>About these codes</h2>
+    <p><strong>ICD-10</strong> is the World Health Organization's International Classification of Diseases, 10th revision. Many countries use their own detailed versions. The codes above follow the U.S. clinical modification, <strong>ICD-10-CM</strong>, which adds a final digit for whether a headache is intractable. Always check against the release in force for your country and year; the U.S. code set updates every 1 October.</p>
+    <h3>What "intractable" means</h3>
+    <p>In ICD-10-CM, intractable means the headache is hard to treat: pharmacoresistant, treatment-resistant, refractory or poorly controlled. It is not a judgement about how severe the pain is.</p>
+    <h3>G44 is a header</h3>
+    <p>G44 itself, and its subheadings such as G44.0 or G44.2, are categories. Claims use the most specific code that matches the documented diagnosis, such as G44.209.</p>
+    <h3>What G44 excludes</h3>
+    <p>Migraine has its own category (G43). Headache with no specific diagnosis is R51.9. Trigeminal neuralgia (G50.0), atypical facial pain (G50.1) and headache after a lumbar puncture (G97.1) are coded elsewhere.</p>
+    <h3>ICD-11</h3>
+    <p>In the newer ICD-11, primary headache disorders sit in the 8A80 to 8A8Z range; for example tension-type headache is 8A81 and the trigeminal autonomic cephalalgias, including cluster headache, are 8A82.</p>
+    <p class="fine">Code titles are from the U.S. ICD-10-CM tabular list and are provided for reference only. G44.com is not affiliated with the WHO, CDC or CMS. This page is not coding or billing advice.</p>
+  </div>
+</section>

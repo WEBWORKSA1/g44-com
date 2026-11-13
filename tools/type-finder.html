@@ -1,0 +1,19 @@
+---
+title: Headache type finder
+description: Ten quick questions. See which headache types match your pattern, based on the international classification of headache disorders. Free and private.
+scripts: [tools/finder.js]
+---
+<div class="tool-card" id="finder"><noscript>This tool needs JavaScript. You can still read about every <a href="types/">headache type</a>.</noscript></div>
+<script type="application/json" id="types-data">{{ site.data.types | jsonify }}</script>
+<div class="prose mt2">
+  <h2>How the finder works</h2>
+  <p>Doctors diagnose most headaches from the story: where the pain is, what it feels like, how long it lasts, how often it comes and what comes with it. The International Classification of Headache Disorders (ICHD-3) turns those features into criteria. The finder asks the same questions and scores your answers against the typical features of each headache in the G44 family and its neighbours.</p>
+  <p>Your answers stay in your browser. The result is a <strong>pattern match, not a diagnosis</strong>. Many people have more than one type of headache, and some serious causes can look like common ones. Take your result to a clinician, ideally with a <a href="tools/headache-diary.html">headache diary</a>.</p>
+  <h2>Questions that matter most</h2>
+  <ul>
+    <li><strong>Attack length</strong> separates the types more than anything else: seconds (stabbing), minutes to 3 hours (cluster family), hours to days (migraine, tension-type), or constant.</li>
+    <li><strong>Eye and nose symptoms on one side</strong> point strongly to the cluster family.</li>
+    <li><strong>Nausea and light sensitivity</strong> point to migraine.</li>
+    <li><strong>A sudden, worst-ever start</strong> is an emergency, whatever else is true.</li>
+  </ul>
+</div>
