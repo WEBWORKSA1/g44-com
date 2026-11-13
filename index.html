@@ -1,0 +1,177 @@
+---
+title: G44
+description: Tap where it hurts and see which headaches usually live there. Plain-English guides to every G44 headache, free tools, live research and a free care-matching service.
+scripts: [feeds.js, tools/weather.js, tools/headmap.js]
+---
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Where does it hurt?</h1>
+      <p class="lede">Tap the spot. G44 shows which headaches usually live there, what helps, and when to get help fast. Free, private and no sign-up.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="tools/type-finder.html">Find my headache type</a>
+        <a class="btn btn-quiet btn-lg" href="tools/headache-diary.html">Start a headache diary</a>
+      </div>
+      <p class="hero-note">G44 is the medical code for "other headache syndromes". We explain every one of them, plus the migraine and sinus headaches they are often mistaken for.</p>
+    </div>
+    <div class="headmap" data-headmap>
+      <svg class="hm-svg" viewBox="0 0 300 350" role="group" aria-label="Head diagram. Choose where your headache is.">
+        <path class="skin" d="M118 276 L118 342 L182 342 L182 276 Z"/>
+        <path class="skin" d="M62 148 C46 142 42 176 52 188 C56 194 63 194 66 188 Z"/>
+        <path class="skin" d="M238 148 C254 142 258 176 248 188 C244 194 237 194 234 188 Z"/>
+        <path class="skin" d="M150 28 C92 28 58 72 58 140 C58 178 66 206 80 232 C92 254 110 282 150 290 C190 282 208 254 220 232 C234 206 242 178 242 140 C242 72 208 28 150 28 Z"/>
+        <path class="feat" d="M100 140 Q118 132 136 140 M164 140 Q182 132 200 140"/>
+        <path class="feat" d="M104 160 Q118 152 132 160 Q118 167 104 160 Z M168 160 Q182 152 196 160 Q182 167 168 160 Z"/>
+        <path class="feat" d="M150 162 L143 199 Q150 205 158 200 M128 233 Q150 243 172 233"/>
+        <path class="zone" data-zone="crown" tabindex="0" role="button" aria-label="Top of the head" d="M150 32 C104 32 72 58 64 98 L236 98 C228 58 196 32 150 32 Z"/>
+        <path class="zone" data-zone="forehead" tabindex="0" role="button" aria-label="Forehead" d="M63 103 L237 103 C239 112 240 122 240 130 L60 130 C60 122 61 112 63 103 Z"/>
+        <ellipse class="zone" data-zone="temple" tabindex="0" role="button" aria-label="Temple, one side" cx="74" cy="153" rx="12" ry="20"/>
+        <ellipse class="zone" data-zone="temple" tabindex="-1" aria-hidden="true" cx="226" cy="153" rx="12" ry="20"/>
+        <ellipse class="zone" data-zone="eye" tabindex="0" role="button" aria-label="Around or behind one eye" cx="118" cy="160" rx="24" ry="15"/>
+        <ellipse class="zone" data-zone="eye" tabindex="-1" aria-hidden="true" cx="182" cy="160" rx="24" ry="15"/>
+        <path class="zone" data-zone="face" tabindex="0" role="button" aria-label="Cheeks and face" d="M96 183 C112 177 136 181 150 189 C164 181 188 177 204 183 L198 216 C182 222 164 218 150 224 C136 218 118 222 102 216 Z"/>
+        <path class="zone" data-zone="neck" tabindex="0" role="button" aria-label="Back of the head and neck" d="M121 290 L179 290 L179 338 L121 338 Z"/>
+      </svg>
+      <div class="hm-side">
+        <h2>Where is the pain?</h2>
+        <div class="chips">
+          <button class="chip" type="button" data-zone="crown" aria-pressed="false">Top</button>
+          <button class="chip" type="button" data-zone="forehead" aria-pressed="false">Forehead</button>
+          <button class="chip" type="button" data-zone="temple" aria-pressed="false">Temple</button>
+          <button class="chip" type="button" data-zone="eye" aria-pressed="false">One eye</button>
+          <button class="chip" type="button" data-zone="face" aria-pressed="false">Face</button>
+          <button class="chip" type="button" data-zone="neck" aria-pressed="false">Neck</button>
+          <button class="chip" type="button" data-zone="band" aria-pressed="false">Tight band</button>
+          <button class="chip" type="button" data-zone="whole" aria-pressed="false">Whole head</button>
+          <button class="chip" type="button" data-zone="sudden" aria-pressed="false">Sudden, worst ever</button>
+        </div>
+        <div class="hm-result" aria-live="polite"><p class="muted">Tap the head or choose a spot above to see the headaches that usually live there.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">{% include redflag.html %}</div>
+
+<section class="section-tight">
+  <div class="wrap grid2">
+    <div class="panel">
+      <h2 class="h3">Headache weather</h2>
+      <div data-weather="compact"></div>
+    </div>
+    <div class="panel">
+      <h2 class="h3">Tip of the day</h2>
+      <div data-tip><p class="tip">Drink a full glass of water at the first hint of a headache.</p></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="tips-data">{{ site.data.tips | jsonify }}</script>
+<script type="application/json" id="types-data">{{ site.data.types | jsonify }}</script>
+
+{% include ad.html slot="home-mid" %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>The G44 family, in plain English</h2>
+        <p>G44 is the ICD-10 category doctors use for headache syndromes other than migraine. Here is every member, and the neighbours they get mixed up with.</p>
+      </div>
+      <a class="btn btn-quiet" href="codes.html">Open the code explorer</a>
+    </div>
+    <div class="ledger">
+      {%- for t in site.data.types %}{% if t.group == "g44" %}{% include type-row.html t=t %}{% endif %}{% endfor %}
+    </div>
+    <h3 class="ledger-group">Often confused with</h3>
+    <div class="ledger">
+      {%- for t in site.data.types %}{% if t.group == "neighbour" %}{% include type-row.html t=t %}{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Free tools that live in your browser</h2>
+        <p>Nothing to install and no account. Your diary and settings stay on your own device.</p>
+      </div>
+      <a class="btn btn-quiet" href="tools/">All tools</a>
+    </div>
+    <div class="toollist">
+      {%- for t in site.data.tools %}{% include tool-item.html t=t %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% include lead-cta.html %}
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <h2>Watch and learn</h2>
+        <p>Short explainers from educators and clinicians. Videos load only when you press play.</p>
+      </div>
+      <a class="btn btn-quiet" href="videos.html">Video library</a>
+    </div>
+    <div class="grid3">
+      {%- for v in site.data.videos.videos %}{% if v.featured %}{% include video.html id=v.id title=v.title channel=v.channel %}{% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2>New in headache research</h2>
+      <div data-pubmed='("headache disorders"[mh] OR "tension-type headache"[tiab] OR "cluster headache"[tiab] OR "medication overuse headache"[tiab]) AND hasabstract' data-max="5"></div>
+      <p class="mt1"><a href="research.html">More research by headache type</a></p>
+    </div>
+    <div class="panel">
+      <h2 class="h3">Studies recruiting now</h2>
+      <div data-trials="headache" data-max="3"></div>
+      <a class="btn btn-primary btn-sm mt1" href="get-care.html?need=studies">Check if I qualify</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap trio">
+    <div>
+      <h2 class="h3">Keep G44 free</h2>
+      <p>Reader support pays for medical review, new tools, promotion and the people who build them.</p>
+      <a class="btn btn-primary" href="support.html">Support G44</a>
+    </div>
+    <div>
+      <h2 class="h3">This month's contest</h2>
+      <p>Share what helps you and win a gift card. Free to enter, open to adults worldwide where permitted.</p>
+      <a class="btn btn-quiet" href="contests.html">See the contest</a>
+    </div>
+    <div>
+      <h2 class="h3">Work with us</h2>
+      <p>Medical reviewers, health writers, video editors and community moderators wanted.</p>
+      <a class="btn btn-quiet" href="careers.html">Open roles</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div>
+      <h2>Questions people ask first</h2>
+      <div class="qa">
+        <details><summary>What does G44 mean?</summary><p>G44 is a category in the ICD-10, the international system doctors and insurers use to code diagnoses. It covers "other headache syndromes": tension-type, cluster, post-traumatic, medication-overuse, thunderclap, hypnic, cervicogenic and more. Migraine has its own category, G43.</p></details>
+        <details><summary>Can this site diagnose my headache?</summary><p>No. Our tools help you describe your headache clearly and spot patterns, which makes your doctor's job easier. Only a clinician who examines you can diagnose you.</p></details>
+        <details><summary>Is G44 free?</summary><p>Yes. Ads, partners and reader support pay for the site, so every guide and tool is free. Care matching is free for patients.</p></details>
+        <details><summary>Where is my diary stored?</summary><p>In your own browser, on your own device. We never see it unless you choose to export it and send it somewhere.</p></details>
+      </div>
+    </div>
+    <div class="panel">
+      <h2 class="h3">Know the warning signs</h2>
+      <p>Most headaches are not dangerous. A few need help fast. Our one-minute checker tells you whether to call for help now, see a doctor today, or book a routine visit.</p>
+      <a class="btn btn-primary" href="tools/red-flags.html">Check warning signs</a>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What does G44 mean?","acceptedAnswer":{"@type":"Answer","text":"G44 is a category in the ICD-10 that covers other headache syndromes, such as tension-type, cluster, post-traumatic, medication-overuse, thunderclap, hypnic and cervicogenic headache. Migraine has its own category, G43."}},{"@type":"Question","name":"Can this site diagnose my headache?","acceptedAnswer":{"@type":"Answer","text":"No. The tools help you describe your headache and spot patterns. Only a clinician who examines you can diagnose you."}},{"@type":"Question","name":"Is G44 free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Ads, partners and reader support pay for the site, so every guide and tool is free, and care matching is free for patients."}}]}</script>

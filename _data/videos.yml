@@ -1,20 +1,22 @@
-# Add a video: copy a block, paste the 11-character YouTube ID. Topic links open YouTube searches.
-- id: KpHP8VmxnBo
-  title: What causes headaches?
-  channel: TED-Ed
-  featured: true
-- id: d2vW_CHWqo4
-  title: "Types of headaches: primary vs secondary"
-  channel: Ninja Nerd (in-depth lecture)
-  featured: true
-- id: JYJXQkOcUXs
-  title: Quick tension headache relief
-  channel: Milton Chiropractic Clinic Cambridge
-  featured: true
-- id: tkljIY87O-g
-  title: How to treat one of the most resistant headaches in medicine
-  channel: Anna Esparham, MD
-  featured: false
+# Add a video: copy a block under videos and paste the 11-character YouTube ID.
+# Topic links open YouTube searches, so they never go stale.
+videos:
+  - id: KpHP8VmxnBo
+    title: What causes headaches?
+    channel: TED-Ed
+    featured: true
+  - id: d2vW_CHWqo4
+    title: "Types of headaches: primary vs secondary"
+    channel: Ninja Nerd (in-depth lecture)
+    featured: true
+  - id: JYJXQkOcUXs
+    title: Quick tension headache relief
+    channel: Milton Chiropractic Clinic Cambridge
+    featured: true
+  - id: tkljIY87O-g
+    title: How to treat one of the most resistant headaches in medicine
+    channel: Anna Esparham, MD
+    featured: false
 topics:
   - {label: Cluster headache explained, q: cluster headache explained neurologist}
   - {label: Rebound headache, q: medication overuse headache explained}

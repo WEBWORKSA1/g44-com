@@ -1,0 +1,163 @@
+---
+title: Get matched with headache care
+description: Free matching with headache specialists, online doctors, drug-free options and paid research studies. Tell us what you need in about a minute.
+scripts: [feeds.js, pages.js]
+---
+<section class="hero">
+  <div class="wrap split">
+    <div>
+      <h1>Get matched with headache care</h1>
+      <p class="lede">Tell us what is going on and what would help. We match you with headache specialists, online doctors, drug-free options or paid research studies, then email you the options. Free, with no obligation.</p>
+      <ul class="trust">
+        <li>Free for patients</li>
+        <li>About a minute</li>
+        <li>You choose who contacts you</li>
+      </ul>
+      <div class="panel mt2">
+        <h2 class="h4">How it works</h2>
+        <ol>
+          <li><strong>Tell us what you need.</strong> Four short steps. No medical records.</li>
+          <li><strong>We match.</strong> We check your request against care providers, online clinics and recruiting studies that serve your area.</li>
+          <li><strong>You decide.</strong> We email your options. Your details go to a provider or study team only after you say yes to that one.</li>
+        </ol>
+      </div>
+      <div class="panel mt1" data-care-trials hidden>
+        <h2 class="h4">Studies recruiting now for this type</h2>
+        <div class="care-trials-list"></div>
+      </div>
+      <div class="qa mt2">
+        <h2 class="h3">Good to know</h2>
+        <details><summary>Is it really free?</summary><p>Yes. Patients never pay us. Some providers and study sponsors pay G44 a referral fee, which is how we keep the service free. Fees never change which options we show you first: fit does.</p></details>
+        <details><summary>Who do you work with?</summary><p>Headache and neurology clinics, licensed online-doctor services, physiotherapy and device providers, and organisations that run approved clinical studies. For injury-related headaches, we can also connect you with independent firms that offer free case reviews.</p></details>
+        <details><summary>What do paid studies involve?</summary><p>Each study is different. Many cover travel and pay for your time. Every study is reviewed by an ethics board, explains the risks in writing first, and lets you leave at any time.</p></details>
+        <details><summary>Is my information private?</summary><p>We use what you send only to answer your request. We never sell it to data brokers. Read our <a href="privacy.html">privacy policy</a> for details.</p></details>
+        <details><summary>I am under 18.</summary><p>Ask a parent or guardian to fill in this form with you. Children's headache care is different, and we will look for paediatric options.</p></details>
+      </div>
+    </div>
+
+    <form class="form-card" id="care-form" data-form data-steps data-skip-prefilled data-subject="Care matching request" data-redirect="thank-you.html?f=care" novalidate>
+      <p class="steps-count">Step 1 of 4</p>
+      <div class="steps-bar"><i></i></div>
+
+      <fieldset class="step q" data-auto>
+        <legend>What would help most right now?</legend>
+        <div class="optgrid">
+          <label class="opt"><input type="radio" name="need" value="specialist" required><span><b>A headache specialist</b><small>Neurologist or headache clinic near me</small></span></label>
+          <label class="opt"><input type="radio" name="need" value="online"><span><b>An online doctor</b><small>A video visit, often this week</small></span></label>
+          <label class="opt"><input type="radio" name="need" value="studies"><span><b>Paid research studies</b><small>Trials recruiting people like me</small></span></label>
+          <label class="opt"><input type="radio" name="need" value="drug-free"><span><b>Drug-free options</b><small>Devices, physio, therapy</small></span></label>
+          <label class="opt"><input type="radio" name="need" value="injury"><span><b>Headache after an injury</b><small>Care and a free case review</small></span></label>
+          <label class="opt"><input type="radio" name="need" value="other"><span><b>Something else</b><small>Tell us in the last step</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="step q" hidden>
+        <legend>About your headaches</legend>
+        <div class="field">
+          <label for="c-type">Which type do you have, or think you have?</label>
+          <select id="c-type" name="headache_type" required>
+            <option value="">Choose one</option>
+            <option value="not sure">Not sure yet</option>
+            {%- for t in site.data.types %}
+            <option value="{{ t.slug }}" data-cond="{{ t.cond }}">{{ t.name }}</option>
+            {%- endfor %}
+          </select>
+          <p class="fine">Not sure? Try the <a href="tools/type-finder.html">type finder</a> or pick "Not sure yet".</p>
+        </div>
+        <div class="field">
+          <label for="c-days">Headache days in a typical month: <output id="c-days-out">4</output></label>
+          <input id="c-days" type="range" name="headache_days_per_month" min="0" max="30" value="4" oninput="document.getElementById('c-days-out').value=this.value">
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="c-since">How long have you had them?</label>
+            <select id="c-since" name="how_long" required>
+              <option value="">Choose one</option>
+              <option>Less than 3 months</option>
+              <option>3 to 12 months</option>
+              <option>1 to 5 years</option>
+              <option>More than 5 years</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-tx">Current treatment</label>
+            <select id="c-tx" name="current_treatment" required>
+              <option value="">Choose one</option>
+              <option>Nothing yet</option>
+              <option>Over-the-counter only</option>
+              <option>Prescription, and it helps</option>
+              <option>Prescription, but not enough</option>
+            </select>
+          </div>
+        </div>
+        <div class="stepnav"><button class="btn btn-quiet" data-back>Back</button><button class="btn btn-primary" data-next>Next</button></div>
+      </fieldset>
+
+      <fieldset class="step q" hidden>
+        <legend>Where are you?</legend>
+        <div class="row2">
+          <div class="field">
+            <label for="c-country">Country</label>
+            <select id="c-country" name="country" required autocomplete="country-name">
+              <option value="">Choose one</option>
+              <option>United States</option><option>Canada</option><option>United Kingdom</option><option>India</option>
+              <option>Australia</option><option>Ireland</option><option>New Zealand</option><option>Germany</option>
+              <option>France</option><option>Spain</option><option>Italy</option><option>Netherlands</option>
+              <option>United Arab Emirates</option><option>Singapore</option><option>South Africa</option><option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-city">City or postcode</label>
+            <input id="c-city" name="city_or_postcode" required autocomplete="postal-code">
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label for="c-pref">Best way to reach you</label>
+            <select id="c-pref" name="contact_preference">
+              <option>Email</option><option>Phone call</option><option>Text or WhatsApp</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-time">Best time</label>
+            <select id="c-time" name="best_time">
+              <option>Any time</option><option>Morning</option><option>Afternoon</option><option>Evening</option>
+            </select>
+          </div>
+        </div>
+        <div class="stepnav"><button class="btn btn-quiet" data-back>Back</button><button class="btn btn-primary" data-next>Next</button></div>
+      </fieldset>
+
+      <fieldset class="step q" hidden>
+        <legend>Where should we send your options?</legend>
+        <div class="row2">
+          <div class="field"><label for="c-name">First name</label><input id="c-name" name="name" required autocomplete="given-name"></div>
+          <div class="field"><label for="c-email">Email</label><input id="c-email" type="email" name="email" required autocomplete="email"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="c-phone">Phone (optional)</label><input id="c-phone" type="tel" name="phone" autocomplete="tel"></div>
+          <div class="field">
+            <label for="c-age">Age range</label>
+            <select id="c-age" name="age_range" required>
+              <option value="">Choose one</option>
+              <option>18 to 29</option><option>30 to 44</option><option>45 to 64</option><option>65 or over</option>
+              <option>Under 18 (a parent or guardian is filling this in)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="c-notes">Anything else we should know? (optional)</label><textarea id="c-notes" name="notes" rows="3"></textarea></div>
+        <label class="check"><input type="checkbox" name="consent" value="Yes" required> <span>I agree that G44.com may contact me about this request and, once I approve a specific option, share my details with that provider or study team. I can withdraw at any time.</span></label>
+        <label class="check"><input type="checkbox" name="newsletter" value="Yes"> <span>Send me the weekly G44 note (optional).</span></label>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="stepnav"><button class="btn btn-quiet" data-back>Back</button><button class="btn btn-primary btn-lg" type="submit">Get my matches</button></div>
+        <p class="fine mt1">Not for emergencies. If you have a sudden severe headache or one with weakness, confusion or fever and a stiff neck, call your local emergency number now. See our <a href="privacy.html">privacy policy</a>.</p>
+      </fieldset>
+    </form>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><div><h2>Run a clinic, online service or study?</h2><p>Reach people who are actively looking for headache care, with consented, pre-qualified enquiries.</p></div><a class="btn btn-quiet" href="partners.html">Partner with G44</a></div>
+  </div>
+</section>
